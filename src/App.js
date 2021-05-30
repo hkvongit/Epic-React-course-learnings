@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import "./styles.css";
 
 export default function App() {
@@ -11,15 +11,15 @@ export default function App() {
     setLowerCasedValue(value.toLowerCase());
   };
   return (
-    <div className="App">
+    <div className='App'>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">user name</label>
+        <label htmlFor='name'>user name</label>
         <input
-          id="name"
+          id='name'
           onChange={(e) => onChange(e)}
           value={lowerCasedValue}
         />
-        <button type="submit">Submit</button>
+        <button type='submit'>Submit</button>
       </form>
     </div>
   );

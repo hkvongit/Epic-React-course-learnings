@@ -14,6 +14,7 @@ export default function App() {
   return (
     <div className="App">
       <Parent/>
+      Check the console in dev tools to get an idea how the demo works.
     </div>
   );
 }

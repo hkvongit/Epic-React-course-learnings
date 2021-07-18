@@ -1,7 +1,9 @@
 import React from 'react'
+import { _success, _info, _warning, _error } from 'react-color-log';
 
-export default (props) => {
-  console.log("Salary compo. rendering");
+
+const Salary =  (props) => {
+  _success("Salary compo. rendering");
   return (
     <div>
       <button
@@ -12,3 +14,5 @@ export default (props) => {
     </div>
   )
 }
+
+export default React.memo(Salary)

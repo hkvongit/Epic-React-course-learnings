@@ -1,4 +1,5 @@
 import React from 'react'
+import { _success, _info, _warning, _error } from 'react-color-log';
 import Age from './Age'
 import  Salary  from './Salary';
 
@@ -8,15 +9,28 @@ export default function ParentComponent() {
 
   /**
    * Code without using useCallback hook
-   */
-  const incrementAge = () => {
-    console.log("incrementAge() called")
-    setAge((currentAge)=>currentAge+1)
-  }
-  const incrementSalary = () => {
-    console.log("incrementSalary() called")
-    setSalary((currentSalary)=> currentSalary + 1000)
-  }
+    */
+   
+   const incrementAge = () => {
+     _error("incrementAge() called")
+     setAge((currentAge)=>currentAge+1)
+    }
+    const incrementSalary = () => {
+      _info("incrementSalary() called")
+      setSalary((currentSalary)=> currentSalary + 1000)
+    }
+
+    /**
+     * After using useCallback
+     const incrementAge = React.useCallback(() => {
+       _error("incrementAge() called")
+       setAge((currentAge)=>currentAge+1)
+      },[])
+      const incrementSalary = React.useCallback(() => {
+        _info("incrementSalary() called")
+        setSalary((currentSalary)=> currentSalary + 1000)
+      },[])
+      */
   return (
     <div>
       <h2>Age : <span>{age}</span></h2>

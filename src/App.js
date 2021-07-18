@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import Parent from './components/Parent'
 import "./styles.css";
 
 export default function App() {
@@ -12,15 +13,7 @@ export default function App() {
   };
   return (
     <div className="App">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">user name</label>
-        <input
-          id="name"
-          onChange={(e) => onChange(e)}
-          value={lowerCasedValue}
-        />
-        <button type="submit">Submit</button>
-      </form>
+      <Parent/>
     </div>
   );
 }
